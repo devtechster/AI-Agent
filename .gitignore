@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+.Python
+
+# Environment variable and secret files
+.env
+*.env
+
+# Flask / Werkzeug debugger logs
+*.log
+
+# SQLite DB
+*.sqlite3
+*.db
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# PyCharm
+.idea/
+
+# Static image cache or compiled assets (if generated)
+*.webp
+*.cache
+
+# Ignore compiled Python C extensions
+*.so
+
+# Node / frontend (if ever extended)
+node_modules/

@@ -1,0 +1,23 @@
+name: Daily Email Agent
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 9AM UTC daily
+  workflow_dispatch:
+
+jobs:
+  send-daily-emails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r app/requirements.txt
+      - name: Run email agent
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+        run: python app/schedule_task.py

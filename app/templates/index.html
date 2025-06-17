@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Digest – Stay Updated</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📡 Tech Digest</h1>
+      <p>Subscribe to get hand-picked tech articles delivered daily.</p>
+    </header>
+
+    <section class="form-section">
+      <form method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flash-messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>
+        {% endif %}
+      {% endwith %}
+    </section>
+
+    <section class="articles">
+      <h2>📰 Today’s Top Tech</h2>
+      <div class="grid">
+        {% for article in articles %}
+          <div class="card">
+            <img src="{{ article.image }}" alt="article preview">
+            <div class="card-body">
+              <h3>{{ article.title }}</h3>
+              <a href="{{ article.link }}" target="_blank">Read more →</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Tech Digest · Curated AI News Daily · Powered by Flask + SendGrid</p>
+    </footer>
+  </div>
+</body>
+</html>
