@@ -4,6 +4,7 @@ A Flask-powered email subscription system that delivers curated tech news to you
 
 * 📥 An instant welcome email
 * 📧 Daily “Hi” emails sent automatically at 9AM
+(this is prototype, email at 9 AM daily supposed to go is latest article Link from website)
 
 Deployed with **Vercel (frontend)** and **GitHub Actions or Render (cron agent)**.
 
